@@ -23,9 +23,9 @@
 
 | Check from the brief | Test | Chromium | Firefox | WebKit |
 |---|---|---|---|---|
-| Successful checkout produces a confirmation | TC-01 | ✅ | ✅ | ✅ |
-| Missing field blocks checkout | TC-02 | ✅ | ✅ | ✅ |
-| Quantity change updates the exact total | TC-03 | ✅ | ✅ | ✅ |
+| Successful checkout produces a confirmation | TC-01 | Pass | Pass | Pass |
+| Missing field blocks checkout | TC-02 | Pass | Pass | Pass |
+| Quantity change updates the exact total | TC-03 | Pass | Pass | Pass |
 
 The extra tests TC-04 to TC-16 also pass in all three browsers. See [TEST_PLAN.md](TEST_PLAN.md) for what each one covers.
 

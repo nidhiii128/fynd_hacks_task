@@ -17,7 +17,9 @@ export class CheckoutPage {
   }
 
   async goto() {
-    await this.page.goto('/');
+    // './' (not '/') so it also works when the site is served from a
+    // sub-folder, as on GitHub Pages.
+    await this.page.goto('./');
     await this.page.getByRole('heading', { name: 'Mini Checkout' }).waitFor();
   }
 
