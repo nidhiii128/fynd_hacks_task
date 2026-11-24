@@ -1,0 +1,31 @@
+:root {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #1f2328;
+  background: #f6f7f9;
+  line-height: 1.5;
+}
+main { max-width: 760px; margin: 2rem auto; padding: 0 1rem; }
+h1 { margin-bottom: 0.5rem; }
+section { background: #fff; border: 1px solid #d8dde3; border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+#confirmations:empty { display: none; }
+.products { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.products li { border: 1px solid #d8dde3; border-radius: 6px; padding: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.price { font-weight: 600; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 0.5rem 0.25rem; border-bottom: 1px solid #eef0f3; vertical-align: top; }
+.num { text-align: right; }
+.qty { display: flex; gap: 0.25rem; align-items: center; }
+.qty-input { width: 3rem; text-align: center; }
+.total { font-size: 1.15rem; text-align: right; margin: 0.75rem 0 0; }
+button { font: inherit; padding: 0.35rem 0.8rem; border-radius: 6px; border: 1px solid #8c959f; background: #fff; cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: 0.55; }
+#place-order { background: #0b5cad; border-color: #0b5cad; color: #fff; padding: 0.55rem 1.25rem; }
+.field { display: flex; flex-direction: column; gap: 0.25rem; margin-bottom: 1rem; max-width: 360px; }
+input { font: inherit; padding: 0.4rem 0.5rem; border: 1px solid #8c959f; border-radius: 6px; }
+input[aria-invalid="true"] { border-color: #c62828; outline-color: #c62828; }
+.field-error { color: #b3261e; margin: 0; font-size: 0.9rem; }
+.form-error { background: #fdecea; border: 1px solid #f5c2c0; color: #8a1c13; padding: 0.6rem 0.8rem; border-radius: 6px; margin-bottom: 1rem; }
+.form-error ul { margin: 0; padding-left: 1.2rem; }
+.confirmation { border-left: 4px solid #2e7d32; padding-left: 1rem; }
+.reference { font-family: ui-monospace, Consolas, monospace; font-size: 1.1rem; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
