@@ -4,8 +4,7 @@ A single-page checkout with two synthetic products, plus a Playwright test suite
 
 Built for the Fynd Hiring Hackathon (Nov 2026), SDET Intern track.
 
-![tests](https://github.com/OWNER/REPO/actions/workflows/tests.yml/badge.svg)
-<!-- After pushing to GitHub, replace OWNER/REPO above with your repository path. -->
+[![tests](https://github.com/nidhiii128/fynd_hacks_task/actions/workflows/tests.yml/badge.svg)](https://github.com/nidhiii128/fynd_hacks_task/actions/workflows/tests.yml)
 
 | | |
 |---|---|
@@ -103,3 +102,4 @@ See section 7 of the [test plan](docs/TEST_PLAN.md#7-not-tested--known-gaps). In
 
 - [Playwright](https://playwright.dev) (Apache-2.0) for browser automation.
 - Everything else uses only the browser and Node.js standard libraries.
+- Built with AI assistance (Claude Code). All code was reviewed, run and understood by me, and the manual tests were carried out by me.
