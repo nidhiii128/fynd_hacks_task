@@ -102,4 +102,3 @@ See section 7 of the [test plan](docs/TEST_PLAN.md#7-not-tested--known-gaps). In
 
 - [Playwright](https://playwright.dev) (Apache-2.0) for browser automation.
 - Everything else uses only the browser and Node.js standard libraries.
-- Built with AI assistance (Claude Code). All code was reviewed, run and understood by me, and the manual tests were carried out by me.
