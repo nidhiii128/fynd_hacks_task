@@ -1,60 +1,53 @@
 # Manual test record
 
-> **TO FILL IN:** run each test yourself in a real browser, replace every `_TODO_`, and save screenshots or a screen recording in `docs/evidence/`. Delete this note when done.
-
-Start the app with `npm start`, then open <http://127.0.0.1:4173>. Reload the page before each test so it starts clean.
-
-| Field | Value |
+| | |
 |---|---|
-| Tester | _TODO_ |
-| Date | _TODO_ |
-| OS | _TODO_ (e.g. Windows 11) |
-| Browsers | _TODO_ (e.g. Chrome 1xx, Edge 1xx, Firefox 1xx) |
-| App version | git commit `_TODO_` |
+| Tester | Nidhi Bhawari |
+| Date | 24 Nov 2026 |
+| OS | Windows 11 |
+| Browser | Google Chrome (desktop) |
+| App | local build, `npm start` at http://127.0.0.1:4173 (same code as commit `a2715db`) |
+
+Each test started from a freshly reloaded page.
 
 ---
 
 ## M-01: Place order with an empty cart
 
-| Step | Action | Expected |
-|---|---|---|
-| 1 | Reload the page. Do not add anything. | "Your cart is empty." is shown. Order total is `₹0.00`. |
-| 2 | Click **Place order** with the name empty. | Red box: "We could not place your order:", listing *"Your cart is empty. Add at least one item to place an order."* and *"Please enter your full name."* No confirmation. |
-| 3 | Type a name, click **Place order** again. | Only the empty-cart message remains. The name is still in the box. No confirmation. |
-| 4 | Add one item. | The red box disappears without another click. |
-| 5 | Click **Place order**. | One confirmation with an `ORD-XXXXXXXX` reference. |
+| Step | Action | Expected | Actual |
+|---|---|---|---|
+| 1 | Reload, add nothing | "Your cart is empty.", total ₹0.00 | As expected |
+| 2 | Click Place order, name empty | Both errors listed, no confirmation | Error box listed "Your cart is empty. Add at least one item to place an order." and "Please enter your full name." Name field outlined red with the message under it. No confirmation. |
+| 3 | Type a name, click Place order | Only the cart error remains, name kept | Only the empty-cart error remained. "Nidhi" stayed in the name field. No confirmation. |
+| 4 | Add Canvas Tote Bag | Error box clears | Error box cleared |
+| 5 | Click Place order | One confirmation with a reference | "Order confirmed", reference `ORD-W775R9R8`, 1 × Canvas Tote Bag ₹249.50, total ₹249.50. Button changed to "Order placed" and was disabled. |
 
-**Actual result:** _TODO: what you saw, step by step_
+**Result:** Pass
 
-**Pass / Fail:** _TODO_
-
-**Evidence:** _TODO: e.g. `evidence/M-01-empty-cart.png`_
+**Evidence:**
+- Step 2: [M-01-step2-empty-cart-and-blank-name.png](evidence/M-01-step2-empty-cart-and-blank-name.png)
+- Step 3: [M-01-step3-name-kept-cart-still-empty.png](evidence/M-01-step3-name-kept-cart-still-empty.png)
+- Step 5: [M-01-step5-order-confirmed.png](evidence/M-01-step5-order-confirmed.png)
 
 ---
 
 ## M-02: Rapid double-click on Place order
 
-Try each variation, reloading the page in between.
+**Steps:** reload, add Steel Water Bottle, enter a name, then click Place order rapidly several times.
 
-| Variation | How | Expected |
-|---|---|---|
-| a | Add an item, enter a name, **double-click** Place order. | Button changes to "Placing order…" and greys out, then **one** confirmation. |
-| b | Same, but click **5+ times as fast as you can**. | One confirmation. |
-| c | Same, but put the cursor in the name box and **press Enter 5+ times quickly**. | One confirmation. |
-| d | After the confirmation appears, try clicking Place order again. | The button says "Order placed" and does nothing. The reference does not change. |
+**Expected:** the button switches to "Placing order…" and disables straight away; exactly one confirmation appears; the reference does not change; further clicks do nothing.
 
-**Actual result:**
-- a: _TODO_
-- b: _TODO_
-- c: _TODO_
-- d: _TODO_
+**Actual:** exactly one "Order confirmed" box appeared, reference `ORD-XYGJWP7H`, 1 × Steel Water Bottle ₹399.00, total ₹399.00. No second confirmation below it. The button showed "Order placed" and was disabled.
 
-**Pass / Fail:** _TODO_
+**Result:** Pass
 
-**Evidence:** _TODO: a short screen recording is best, e.g. `evidence/M-02-double-click.mp4` (Windows: Win+Alt+R with Xbox Game Bar, or Win+Shift+S then Record)_
+**Evidence:** [M-02-after-rapid-clicks-one-confirmation.png](evidence/M-02-after-rapid-clicks-one-confirmation.png)
+
+The screenshot shows the end state. The timing itself (two clicks landing inside the 800 ms processing window) is covered by automated tests TC-10 and TC-11, which use Playwright's fake clock to make that window deterministic.
 
 ---
 
-## Exploratory notes
+## Notes
 
-_TODO: anything else you tried and what happened. If something behaved wrongly, log it in [DEFECTS.md](DEFECTS.md) with steps, expected, actual and evidence._
+- No defects found in these manual runs.
+- The one defect found during exploratory testing (DEF-01, quantity error shown while retyping) is in [DEFECTS.md](DEFECTS.md).
